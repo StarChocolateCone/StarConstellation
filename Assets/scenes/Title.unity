@@ -680,4 +680,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f3b3c62a146a6c428dda5a889b38986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Main
+  nextScene: StageSelect
