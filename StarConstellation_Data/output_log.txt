@@ -1,0 +1,41 @@
+Initialize engine version: 5.5.1f1 (88d00a7498cd)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA Quadro K1200 (ID=0x13bc)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   10.18.13.6213
+Begin MonoManager ReloadAssembly
+Platform assembly: Z:\StarConstellation\StarConstellation_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading Z:\StarConstellation\StarConstellation_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: Z:\StarConstellation\StarConstellation_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading Z:\StarConstellation\StarConstellation_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: Z:\StarConstellation\StarConstellation_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading Z:\StarConstellation\StarConstellation_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: Z:\StarConstellation\StarConstellation_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading Z:\StarConstellation\StarConstellation_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: Z:\StarConstellation\StarConstellation_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading Z:\StarConstellation\StarConstellation_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.512 seconds
+Platform assembly: Z:\StarConstellation\StarConstellation_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: Z:\StarConstellation\StarConstellation_Data\Managed\System.dll (this message is harmless)
+desktop: 2560x1440 59Hz; virtual: 2560x1440 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.538472 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.584807 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 255.
+Total: 0.174685 ms (FindLiveObjects: 0.017623 ms CreateObjectMapping: 0.009275 ms MarkObjects: 0.140367 ms  DeleteObjects: 0.004637 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.226318 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 225.
+Total: 0.128309 ms (FindLiveObjects: 0.014531 ms CreateObjectMapping: 0.008656 ms MarkObjects: 0.096463 ms  DeleteObjects: 0.008038 ms)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 2b28 -> priority: 1 

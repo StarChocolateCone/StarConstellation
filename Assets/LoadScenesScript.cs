@@ -20,6 +20,13 @@ public class LoadScenesScript : MonoBehaviour {
 
     public void OnClick()
     {
-        SceneManager.LoadScene(nextScene);
+        if(nextScene == "End")
+        {
+            Application.Quit();
+        }
+        else
+        {
+            SceneManager.LoadScene(nextScene);
+        }
     }
 }
