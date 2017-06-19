@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class LoadScenesScript : MonoBehaviour {
 
-	// Use this for initialization
+    // Use this for initialization
+    public string nextScene;
 	void Start () {
 		
 	}
@@ -19,6 +20,6 @@ public class LoadScenesScript : MonoBehaviour {
 
     public void OnClick()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene(nextScene);
     }
 }
