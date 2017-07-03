@@ -18,6 +18,11 @@ public class LoadScenesScript : MonoBehaviour {
 		
 	}
 
+    public void OnClick(string name)
+    {
+        SceneManager.LoadScene(nextScene);
+        Stage.stageName = name;
+    }
     public void OnClick()
     {
         SceneManager.LoadScene(nextScene);
