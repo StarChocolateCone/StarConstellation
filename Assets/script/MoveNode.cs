@@ -51,6 +51,7 @@ public class MoveNode : MonoBehaviour {
     void StateChangedHandle(object sender, System.EventArgs e)
     {
         // 変形中のタッチ時の処理
+
     }
 
     void TransformCompletedHandle(object sender, System.EventArgs e)
