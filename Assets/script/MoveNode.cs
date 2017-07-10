@@ -4,6 +4,8 @@ using UnityEngine;
 using TouchScript.Gestures;
 
 public class MoveNode : MonoBehaviour {
+    private Vector3 vec;
+    private Vector3 pos;
 
 	// Use this for initialization
 	void Start () {
@@ -12,8 +14,8 @@ public class MoveNode : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+    }
 
     void OnEnable()
     {
@@ -46,12 +48,18 @@ public class MoveNode : MonoBehaviour {
     void TransformStartedHandle(object sender, System.EventArgs e)
     {
         // 変形開始のタッチ時の処理
+
+        var gesture = sender as TransformGesture;
+        vec = gesture.LocalDeltaPosition;
+        pos = this.gameObject.transform.position;
+
     }
 
     void StateChangedHandle(object sender, System.EventArgs e)
     {
         // 変形中のタッチ時の処理
 
+        this.gameObject.transform.position = new Vector3(pos.x + vec.x, pos.y + vec.y, 0);
     }
 
     void TransformCompletedHandle(object sender, System.EventArgs e)
