@@ -7,8 +7,13 @@ public class LoadScoreImage : MonoBehaviour {
 
     // Use this for initialization
     public Image ScoreImage;
-    public Texture[] tex;
+    public Texture2D texture;
+    public enum SCORE
+    {
+        S,A,B,C
+    }
 
+    public SCORE score;
     void Start () {
         
         switch (Stage.stageName)
@@ -16,77 +21,94 @@ public class LoadScoreImage : MonoBehaviour {
             case "Spring":
                 if (Stage.missCount <= 1)
                 {
-                    ScoreImage.material.mainTexture = tex[0];
+                    score = SCORE.S;
                 }
                 else if (Stage.missCount <= 4)
                 {
-                    ScoreImage.material.mainTexture = tex[1];
+                    score = SCORE.A;
                 }
                 else if (Stage.missCount <= 5)
                 {
-                    ScoreImage.material.mainTexture = tex[2];
+                    score = SCORE.B;
                 }
                 else
                 {
-                    ScoreImage.material.mainTexture = tex[3];
+                    score = SCORE.C;
                 }
                 break;
             case "Summer":
                 if (Stage.missCount <= 1)
                 {
-                    ScoreImage.material.mainTexture = Resources.Load("R_S") as Texture;
+                    score = SCORE.S;
                 }
                 else if (Stage.missCount <= 6)
                 {
-                    ScoreImage.material.mainTexture = Resources.Load("R_A") as Texture;
+                    score = SCORE.A;
                 }
                 else if (Stage.missCount <= 9)
                 {
-                    ScoreImage.material.mainTexture = Resources.Load("R_B") as Texture;
+                    score = SCORE.B;
                 }
                 else
                 {
-                    ScoreImage.material.mainTexture = Resources.Load("R_C") as Texture;
+                    score = SCORE.C;
                 }
                 break;
             case "Autumn":
                 if (Stage.missCount <= 1)
                 {
-                    ScoreImage.material.mainTexture = Resources.Load("R_S") as Texture;
+                    score = SCORE.S;
                 }
                 else if (Stage.missCount <= 3)
                 {
-                    ScoreImage.material.mainTexture = Resources.Load("R_A") as Texture;
+                    score = SCORE.A;
                 }
                 else if (Stage.missCount <= 4)
                 {
-                    ScoreImage.material.mainTexture = Resources.Load("R_B") as Texture;
+                    score = SCORE.B;
                 }
                 else
                 {
-                    ScoreImage.material.mainTexture = Resources.Load("R_C") as Texture;
+                    score = SCORE.C;
                 }
                 break;
             case "Winter":
                 if (Stage.missCount <= 1)
                 {
-                    ScoreImage.material.mainTexture = Resources.Load("R_S") as Texture;
+                    score = SCORE.S;
                 }
                 else if (Stage.missCount <= 6)
                 {
-                    ScoreImage.material.mainTexture = Resources.Load("R_A") as Texture;
+                    score = SCORE.A;
                 }
                 else if (Stage.missCount <= 12)
                 {
-                    ScoreImage.material.mainTexture = Resources.Load("R_B") as Texture;
+                    score = SCORE.B;
                 }
                 else
                 {
-                    ScoreImage.material.mainTexture = Resources.Load("R_C") as Texture;
+                    score = SCORE.C;
                 }
                 break;
         }
-        ScoreImage.rectTransform.position = new Vector3(0, 0, 0);
+
+        switch(score)
+        {
+            case SCORE.S:
+                texture = Resources.Load("R_S") as Texture2D;
+                break;
+            case SCORE.A:
+                texture = Resources.Load("R_A") as Texture2D;
+                break;
+            case SCORE.B:
+                texture = Resources.Load("R_B") as Texture2D;
+                break;
+            case SCORE.C:
+                texture = Resources.Load("R_C") as Texture2D;
+                break;
+        }
+
+        ScoreImage.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
     }
 	
 	// Update is called once per frame
