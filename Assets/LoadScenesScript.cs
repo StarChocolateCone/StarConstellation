@@ -22,11 +22,9 @@ public class LoadScenesScript : MonoBehaviour {
     {
         SceneManager.LoadScene(nextScene);
         Stage.stageName = name;
-        Stage.missCount += 2;
     }
     public void OnClick()
     {
         SceneManager.LoadScene(nextScene);
-        Stage.missCount += 2;
     }
 }
