@@ -7,16 +7,6 @@ public class MoveNode : MonoBehaviour {
     private Vector3 vec;
     private Vector3 pos;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-    }
-
     void OnEnable()
     {
         // Transform Gestureのdelegateに登録
