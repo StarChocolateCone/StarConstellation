@@ -20,15 +20,16 @@ public class MouseDrag : MonoBehaviour
 		Vector3 mousePointInWorld = Camera.main.ScreenToWorldPoint(mousePointInScreen);
 		mousePointInWorld.z = this.transform.position.z;
 		this.transform.position = mousePointInWorld;
+
 	}
 
-	void OnCollisionStay2D()
+	void OnCollisionStay2D(Collision2D coll)
 	{
 		Debug.Log ("X:" + oldObjectPositon.x);
 		Debug.Log ("Y:" + oldObjectPositon.y);
 	}
 
-	void OnCollisionExit2D()
+	void OnCollisionExit2D(Collision2D coll)
 	{
 		this.transform.position = oldObjectPositon;
 	}
