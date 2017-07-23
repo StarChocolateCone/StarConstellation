@@ -5,10 +5,15 @@ public class MouseDrag : MonoBehaviour
 {
 	Vector3 oldObjectPositon;
     bool collisionFlag = false;
+    public Sprite NowSprite;
+    public Sprite TempSprite;
+    public int movecount;
+    SpriteRenderer Renderer;
 
     private void Start()
     {
         oldObjectPositon = this.transform.position;
+        Renderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     void OnMouseDrag()
@@ -46,6 +51,8 @@ public class MouseDrag : MonoBehaviour
 
     private void OnMouseUp()
     {
+        movecount--;
+
         if (!collisionFlag)
         {
         }
