@@ -13,7 +13,6 @@ public class MouseDrag : MonoBehaviour
     private void Start()
     {
         oldObjectPositon = this.transform.position;
-        Renderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     void OnMouseDrag()
@@ -52,6 +51,16 @@ public class MouseDrag : MonoBehaviour
     private void OnMouseUp()
     {
         movecount--;
+        if(movecount == 0)
+        {
+            GameObject.Destroy(gameObject);
+        }
+        else
+        {
+            string SpriteName = "node" + movecount;
+            TempSprite = Resources.Load<Sprite>(SpriteName);
+            Renderer = gameObject.GetComponent<SpriteRenderer>();
+        }
 
         if (!collisionFlag)
         {
