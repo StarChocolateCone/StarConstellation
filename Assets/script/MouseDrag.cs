@@ -6,13 +6,19 @@ public class MouseDrag : MonoBehaviour
 	Vector3 oldObjectPositon;
     bool collisionFlag = false;
     public Sprite NowSprite;
-    public Sprite TempSprite;
     public int movecount;
     SpriteRenderer Renderer;
+    string SpriteName;
+    public Sprite GetSprite(string fileName, string spriteName)
+    {
+        Sprite[] LoadSprite = Resources.LoadAll<Sprite>(fileName);
+        return System.Array.Find<Sprite>(LoadSprite, (sprite) => sprite.name.Equals(spriteName));
+    }
 
     private void Start()
     {
         oldObjectPositon = this.transform.position;
+        //NowSprite = gameObject.GetComponent<SpriteRenderer>();
     }
 
     void OnMouseDrag()
@@ -53,17 +59,22 @@ public class MouseDrag : MonoBehaviour
         movecount--;
         if(movecount == 0)
         {
-            GameObject.Destroy(gameObject);
+            SpriteName = "node_point";
+            Sprite TempSprite = GetSprite("Node", SpriteName);
+            Renderer = gameObject.GetComponent<SpriteRenderer>();
+            Renderer.sprite = TempSprite;
         }
         else
         {
-            string SpriteName = "node" + movecount;
-            TempSprite = Resources.Load<Sprite>(SpriteName);
+            SpriteName = "node" + movecount;
+            Sprite TempSprite = GetSprite("Node", SpriteName);
             Renderer = gameObject.GetComponent<SpriteRenderer>();
+            Renderer.sprite = TempSprite;
         }
 
         if (!collisionFlag)
         {
+            oldObjectPositon = this.transform.position;
         }
     }
 }
